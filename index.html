@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<style type="text/css">
+  .layered-paper-big {
+    /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+      /* The top layer shadow */
+      5px 5px 0 0px #fff,
+      /* The second layer */
+      5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+      /* The second layer shadow */
+      10px 10px 0 0px #fff,
+      /* The third layer */
+      10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+    /* The third layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DreamDance</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    });
+
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+
+        <!-- Logo 部分 -->
+        <div class="has-text-centered">
+          <img src="static/images/logo.jpg" alt="Logo" style="max-width: 150px; margin-bottom: 20px;">
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DreamDance: Animating Character Art via Inpainting Stable Gaussian
+              Worlds</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://kebii.github.io" target="_blank">Jiaxu Zhang</a><sup>1,2,3</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=tgDc0fsAAAAJ&hl=en" target="_blank">Xianfang
+                  Zeng</a><sup>3</sup><sup>†</sup>,</span>
+              <span class="author-block">
+                <a href="https://chenxin.tech/" target="_blank">Xin Chen</a><sup>4</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Wei Zuo</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.skicyyu.org/" target="_blank">Gang Yu</a><sup>3</sup><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://https://guosheng.github.io/" target="_blank">Guosheng Lin</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Zhigang Tu</a><sup>1</sup><sup>*</sup></span>
+              <span class="author-block"></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>Wuhan University, <sup>2</sup>Nanyang Technological University, <sup>3</sup>StepFun,
+                <sup>4</sup>ByteDance
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <div class="eql-cntrb">
+                <small><sup>†</sup>Project leader</small>
+                <small><sup>*</sup>Corresponding author</small>
+              </div>
+            </div>
+
+            <!-- <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Under review)</span>
+                </a>
+              </span> -->
+
+            <!-- Supplementary PDF link
+              <span class="link-block">
+                <a href="static/pdfs/CVPR_2023_R2ET_supply.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Supplementary</span>
+              </a>
+            </span> -->
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+
+            <!-- Github link -->
+            <span class="link-block">
+              <a href="https://github.com/Kebii/DreamDance" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            <!-- <span class="link-block">
+                <a href="static/videos/DemoVideo.mp4" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video Results</span>
+                </a>
+              </span> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <!-- <div class="container is-max-desktop">
+    <center>
+      <img class="round" style="width:850px" src="static/images/teaser.jpg"/>
+    </center> -->
+    <h2 class="subtitle has-text-centered">
+      We propose DreamDance, a novel paradigm that reformulates the character art animation task into two inpainting
+      based steps: <br>Camera-aware Scene Inpainting for stable scene reconstruction and Pose-aware Video Inpainting for
+      dynamic character animation.
+    </h2>
+
+    <div class="hero-body" style="display: flex; justify-content: center;">
+      <video poster="" id="tree" controls loop style="max-width: 1000px; width: 70%;">
+        <!-- Your video here -->
+        <source src="./static/videos/DemoVideo.mp4" type="video/mp4">
+      </video>
+    </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              This paper presents DreamDance, a novel character art animation framework capable of producing stable,
+              consistent character and scene motion conditioned on precise camera trajectories. To achieve this, we
+              re-formulate the animation task as two inpainting-based steps: Camera-aware Scene Inpainting and
+              Pose-aware Video Inpainting. The first step leverages a pre-trained image inpainting model to generate
+              multi-view scene images from the reference art and optimizes a stable large-scale Gaussian field, which
+              enables coarse background video rendering with camera trajectories. However, the rendered video is rough
+              and only conveys scene motion. To resolve this, the second step trains a pose-aware video inpainting model
+              that injects the dynamic character into the scene video while enhancing background quality. Specifically,
+              this model is a DiT-based video generation model with a gating strategy that adaptively integrates the
+              character's appearance and pose information into the base background video. Through extensive experiments,
+              we demonstrate the effectiveness and generalizability of DreamDance, producing high-quality and consistent
+              character animations with remarkable camera dynamics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Method -->
+  <section class="section" id="method">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified">
+            <table align="center" width="1000px">
+              <tr>
+                <td width="1000px">
+                  <img class="round" style="width:1000px" src="static/images/method_overview.png" />
+                </td>
+              </tr>
+            </table>
+            <table align="center" width="1000px">
+              <tr>
+                <td style="text-align: justify;">
+                  The reference character art is decomposed into foreground and background layers. The background image
+                  is used to reconstruct a stable 3D Gaussian scene through a wrap-and-inpaint scheme, enabling coarse
+                  background video rendering based on custom camera trajectories. The gated MM-DiT model then inpaints
+                  the background video based on the foreground character and the driving poses, generating dynamic
+                  character animations.
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Method -->
+
+
+  <!-- Paper poster -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <center>
+          <h2 class="title is-3">Technical Paper</h2>
+        </center>
+        <br>
+        <hr>
+        <table align=center width=730px>
+          <tr>
+            <td><a href="https://arxiv.org/pdf/"><img class="layered-paper-big" style="height:175px"
+                  src="static/images/paper.jpg" /></a></td>
+            <td><span style="font-size:10pt">Jiaxu Zhang, Xianfang Zeng, Xin Chen, Wei Zuo, Gang Yu, Guosheng Lin, Zhigang Tu<br>
+                <b>DreamDance: Animating Character Art via Inpainting Stable Gaussian Worlds</b><br>
+                arXiv:2411.08656, 2025.<br>
+                <span style="font-size:4pt"><a href=""><br></a>
+                </span>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <iframe src="static/pdfs/DreamDance_paper.pdf" width="70%" height="600" style="display: block; margin: auto;">
+        </iframe>
+
+      </div>
+    </div>
+  </section>
+  <!--End paper poster -->
+
+
+  <!-- BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{zhang2025dreamdance,
+      title={DreamDance: Animating Character Art via Inpainting Stable Gaussian Worlds}, 
+      author={Jiaxu Zhang and Xianfang Zeng and Xin Chen and Wei Zuo and Gang Yu and Guosheng Lin and Zhigang Tu},
+      year={2025},
+      eprint={2411.08656},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+
+              This page was built using the <a href="https://nerfies.github.io/" target="_blank">Nerfies website</a>.
+              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
